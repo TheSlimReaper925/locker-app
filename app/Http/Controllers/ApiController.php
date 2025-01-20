@@ -38,7 +38,7 @@ class ApiController extends Controller
         if ($cardData) {
             Log::query()->create([
                 'card_id' => $cardData->id,
-                'status_id' => (bool)$cardData
+                'status_id' => 1
             ]);
         }
 
@@ -50,5 +50,13 @@ class ApiController extends Controller
     public function getList()
     {
         return Card::query()->get();
+    }
+
+    public function getLogs()
+    {
+        return Log::query()
+            ->select('logs.id', 'logs.card_id', 'logs.status_id', 'c.card_number', 'logs.created_at')
+            ->leftJoin('cards as c', 'c.id', '=', 'logs.card_id')
+            ->get();
     }
 }

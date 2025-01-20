@@ -12,3 +12,4 @@ Route::post('save-card', [ApiController::class, 'saveCard']);
 Route::post('check-card', [ApiController::class, 'checkCard']);
 
 Route::get('get-list', [ApiController::class, 'getList']);
+Route::get('get-logs', [ApiController::class, 'getLogs']);
