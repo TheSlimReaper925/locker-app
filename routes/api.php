@@ -10,3 +10,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('save-card', [ApiController::class, 'saveCard']);
 Route::post('check-card', [ApiController::class, 'checkCard']);
+
+Route::get('get-list', [ApiController::class, 'getList']);

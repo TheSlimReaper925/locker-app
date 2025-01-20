@@ -46,4 +46,9 @@ class ApiController extends Controller
             'status' => (bool)$cardData
         ];
     }
+
+    public function getList()
+    {
+        return Card::query()->get();
+    }
 }
